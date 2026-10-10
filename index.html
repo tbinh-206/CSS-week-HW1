@@ -1,43 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Springtime In Michigan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khám phá những điểm đến nổi bật tại Việt Nam: Đà Nẵng, Nha Trang và Đà Lạt. Cùng lên kế hoạch cho chuyến du lịch tiếp theo của bạn.">
+  <title>Du lịch Việt Nam</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header>
-    <nav>
+  <a class="skip-link" href="#main-content">
+    Chuyển đến nội dung chính
+  </a>
+
+  <header class="site-header">
+    <nav aria-label="Điều hướng chính">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="neighborhood.html">Neighborhood Walks</a></li>
-        <li><a href="parks.html">Walks in the Park</a></li>
+        <li>
+          <a class="active" href="index.html" aria-current="page">
+            Trang chủ
+          </a>
+        </li>
+        <li><a href="danang.html">Đà Nẵng</a></li>
+        <li><a href="nhatrang.html">Nha Trang</a></li>
+        <li><a href="dalat.html">Đà Lạt</a></li>
       </ul>
     </nav>
-    <img src="images/BaconGallupPark.jpg" width="200" alt="Brown Labradoodle sitting next to a statue.">
-    <h1>Springtime in Michigan</h1>
+
+    <div class="hero">
+      <p class="eyebrow">VIỆT NAM TƯƠI ĐẸP</p>
+      <h1>Đi để yêu hơn Việt Nam</h1>
+      <p>
+        Ba điểm đến, ba sắc màu trải nghiệm —
+        từ biển xanh miền Trung đến thành phố ngàn hoa.
+      </p>
+      <a class="hero-button" href="#destinations">
+        Khám phá ngay
+      </a>
+    </div>
   </header>
-  <main>
-    <p>Springtime in <a href="https://www.michigan.org/city/ann-arbor">Ann Arbor</a> is a beautiful time. Even though
-      it can be chilly at times, it is nice to walk my dog Bacon. This site includes some pictures I have taken on
-      these walks. </p>
 
-    <p>Sometimes we walk around the neighborhood, other times we make it to the woods. Ann Arbor also has some
-      beautiful lakes and rivers including the <a
-        href="https://www.annarbor.org/things-to-do/recreation-outdoors/huron-river/">Huron River Watertrail</a> and
-      the <a href="https://www.a2gov.org/departments/Parks-Recreation/parks-places/argo/pages/default.aspx">Argo Park
-        Cascades</a>.</p>
+  <main id="main-content" tabindex="-1">
+    <section class="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">Chuyến đi tiếp theo của bạn ở đâu?</h2>
+      <p>
+        Chọn điểm đến phù hợp với sở thích của bạn:
+        khám phá thành phố biển năng động, nghỉ dưỡng bên bờ cát trắng
+        hay tận hưởng không khí se lạnh giữa cao nguyên.
+        Mỗi hành trình sẽ mang đến những trải nghiệm đáng nhớ.
+      </p>
+    </section>
 
+    <section
+      id="destinations"
+      class="destination-section"
+      aria-labelledby="destinations-title"
+    >
+      <h2 id="destinations-title">Điểm đến nổi bật</h2>
+
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img
+            src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1000&q=85"
+            alt="Khung cảnh thành phố ven biển Đà Nẵng"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <p class="card-tag">BIỂN &amp; THÀNH PHỐ</p>
+            <h3>Đà Nẵng</h3>
+            <p>
+              Thành phố trẻ với bãi biển Mỹ Khê, bán đảo Sơn Trà
+              và những cây cầu nổi bật bên sông Hàn.
+            </p>
+            <a class="text-link" href="danang.html">
+              Khám phá Đà Nẵng →
+            </a>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <img
+            src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85"
+            alt="Sóng biển xanh vỗ vào bờ cát"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <p class="card-tag">BIỂN XANH &amp; NẮNG VÀNG</p>
+            <h3>Nha Trang</h3>
+            <p>
+              Điểm đến lý tưởng để tắm biển, khám phá các hòn đảo
+              và thưởng thức hải sản tươi ngon.
+            </p>
+            <a class="text-link" href="nhatrang.html">
+              Khám phá Nha Trang →
+            </a>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85"
+            alt="Núi đồi và thiên nhiên trong khung cảnh mờ sương"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <p class="card-tag">CAO NGUYÊN &amp; NGÀN HOA</p>
+            <h3>Đà Lạt</h3>
+            <p>
+              Tận hưởng không khí mát lành, rừng thông,
+              hồ thơ mộng và những quán cà phê yên bình.
+            </p>
+            <a class="text-link" href="dalat.html">
+              Khám phá Đà Lạt →
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="destination-section" aria-labelledby="experiences-title">
+      <h2 id="experiences-title">Trải nghiệm đáng nhớ</h2>
+
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img
+            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85"
+            alt="Cảnh quan thiên nhiên xanh mát dành cho chuyến khám phá"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <p class="card-tag">KHÁM PHÁ THIÊN NHIÊN</p>
+            <h3>Hòa mình vào thiên nhiên</h3>
+            <p>
+              Tận hưởng không khí trong lành, khám phá cảnh quan
+              và lưu lại những khoảnh khắc đáng nhớ.
+            </p>
+          </div>
+        </article>
+
+        <article class="destination-card">
+          <img
+            src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"
+            alt="Khung cảnh thành phố rực sáng khi đêm xuống"
+            loading="lazy"
+          >
+          <div class="card-content">
+            <p class="card-tag">DẠO PHỐ VỀ ĐÊM</p>
+            <h3>Khám phá nhịp sống thành phố</h3>
+            <p>
+              Đi dạo trên những con phố lung linh,
+              thưởng thức món ngon và cảm nhận văn hóa địa phương.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="travel-tip" aria-labelledby="tips-title">
+      <h2 id="tips-title">Mẹo nhỏ cho chuyến đi</h2>
+      <ul class="place-list">
+        <li>Lên lịch trình và dự trù ngân sách trước khi khởi hành.</li>
+        <li>Kiểm tra thời tiết và đặt phòng sớm vào mùa cao điểm.</li>
+        <li>Chuẩn bị quần áo phù hợp với khí hậu từng điểm đến.</li>
+        <li>Giữ gìn vệ sinh, bảo vệ cảnh quan và tôn trọng văn hóa địa phương.</li>
+      </ul>
+    </section>
   </main>
+
   <footer>
-    <p>This page was originally created by Colleen van Lent for the <a
-        href="https://www.coursera.org/specializations/web-design"> Web Design for Everybody</a> Specialization.
-      Specialization. Students are invited to make changes.</p>
+    <p>
+      © 2026 Du lịch Việt Nam · Cùng khám phá và gìn giữ vẻ đẹp quê hương.
+    </p>
   </footer>
-
 </body>
-
 </html>

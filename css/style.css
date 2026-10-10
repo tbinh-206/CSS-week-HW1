@@ -1,36 +1,437 @@
+*{
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #243447;
+  background: #f5f8fb;
 }
 
-header {
-    background-color: #e6f2ff;
+h1,
+h2,
+h3 {
+  line-height: 1.3;
 }
 
-nav {
-    background-color: #e4bebe;
+h2 {
+  color: #075985;
 }
 
-main {
-    background-color: #f5f5f5;
-    font-size: 18px;
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-footer {
-    background-color: #dddddd;
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 1000;
+  padding: 10px 14px;
+  background: #ffffff;
+  color: #075985;
+  border: 2px solid #075985;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-li {
-    display: inline-block;
-    width: 150px;
+.skip-link:focus {
+  top: 12px;
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+.site-header {
+  background: #0c4a6e;
+  color: #ffffff;
+}
+
+.hero,
+.page-hero {
+  padding: 76px 24px 88px;
+  text-align: center;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(7, 89, 133, 0.94),
+      rgba(14, 116, 144, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=85")
+    center / cover;
+}
+
+.hero {
+  min-height: 390px;
+}
+
+.page-hero {
+  padding-top: 62px;
+  padding-bottom: 66px;
+}
+
+.danang-hero {
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(7, 89, 133, 0.86),
+      rgba(14, 116, 144, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1800&q=85");
+}
+
+.nhatrang-hero {
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(7, 89, 133, 0.78),
+      rgba(14, 116, 144, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85");
+}
+
+.dalat-hero {
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(7, 89, 133, 0.78),
+      rgba(14, 116, 144, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85");
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
 }
 
 h1 {
-    text-align: center;
-    font-family: Georgia, serif;
-    color: #0066cc;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  margin: 10px 0 18px;
 }
 
-p {
-    line-height: 1.6;
+.hero > p:not(.eyebrow),
+.page-hero > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  font-size: 1.1rem;
+}
+
+.hero-button {
+  display: inline-block;
+  background: #fbbf24;
+  color: #172554;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 11px 22px;
+  border-radius: 24px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background: #fde68a;
+  transform: translateY(-3px);
+}
+
+nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 16px 0;
+}
+
+nav a {
+  display: block;
+  color: #ffffff;
+  background: #0c4a6e;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 9px 14px;
+  border-radius: 7px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.active,
+nav a[aria-current="page"] {
+  background: #ffffff;
+  color: #075985;
+  transform: translateY(-2px);
+}
+
+nav a:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 38px 24px 56px;
+}
+
+.intro {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.destination-section > h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* ========================================
+   6. CSS Grid cho danh sách điểm đến
+   Ba cột trên màn hình lớn
+   ======================================== */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.destination-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin: 4px 0 8px;
+  color: #0c4a6e;
+  font-size: 1.45rem;
+}
+
+.card-content p {
+  margin-top: 8px;
+}
+
+.card-tag {
+  color: #0e7490;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #d5e7f3;
+  padding: 4px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-sizing: border-box;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.detail-image {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+
+.destination-card img:hover,
+.detail-image:hover {
+  transform: scale(1.025);
+  border-color: #0e7490;
+  box-shadow: 0 8px 20px rgba(7, 89, 133, 0.2);
+}
+
+.destination-card:nth-child(odd) img {
+  border-radius: 12px 28px 12px 28px;
+}
+
+.destination-card:nth-child(even) img {
+  border-radius: 28px 12px 28px 12px;
+}
+
+.text-link,
+.back-link {
+  color: #0369a1;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover,
+.back-link:hover {
+  color: #0c4a6e;
+  text-decoration: underline;
+}
+
+.travel-tip,
+.info-panel {
+  margin-top: 38px;
+  padding: 24px 28px;
+  border-left: 5px solid #0e7490;
+  background: #e0f2fe;
+  border-radius: 8px;
+}
+
+.travel-tip h2,
+.info-panel h2 {
+  margin-top: 0;
+}
+
+.content-page {
+  min-height: 55vh;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.detail-layout h2 {
+  margin-top: 0;
+}
+
+.place-list {
+  padding-left: 22px;
+}
+
+.place-list li {
+  padding: 3px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+footer {
+  padding: 22px 24px;
+  text-align: center;
+  background: #082f49;
+  color: #e0f2fe;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  nav {
+    padding: 0 14px;
+  }
+
+  nav ul {
+    gap: 3px;
+  }
+
+  nav a {
+    padding: 8px 10px;
+  }
+
+  .hero {
+    min-height: 330px;
+    padding-top: 58px;
+  }
+
+  .destination-grid,
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-card img {
+    height: 240px;
+  }
+
+  .detail-image {
+    height: 270px;
+  }
+
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav a {
+    text-align: center;
+  }
+
+  .hero,
+  .page-hero {
+    padding: 48px 16px;
+  }
+
+  .destination-grid {
+    gap: 18px;
+  }
+
+  .travel-tip,
+  .info-panel {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
